@@ -1,0 +1,3 @@
+{{ if not (and (eq .chezmoi.os "linux") (.chezmoi.kernel.osrelease | lower | contains "microsoft")) }}
+.config/fish/conf.d/ssh-agent.fish
+{{ end }}
