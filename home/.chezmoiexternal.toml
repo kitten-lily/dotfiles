@@ -7,3 +7,11 @@
     executable = true
     checksum.sha256 = "4752c108432382a6e77afaa3a5d9f9908e466a2cad1de4392e7f3e0775dfb1ab"
 {{ end }}
+
+[".config/bat/themes"]
+    type = "archive"
+    url = "https://github.com/catppuccin/bat/archive/main.tar.gz"
+    exact = true
+    stripComponents = 1
+    refreshPeriod = "168h"
+    include = ["*/*.tmTheme"]
