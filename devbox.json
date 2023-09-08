@@ -1,7 +1,6 @@
 {
   "packages": [
     "bat@latest",
-    "fish@latest",
     "chezmoi@latest",
     "eza@latest",
     "git@latest",
