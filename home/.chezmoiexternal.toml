@@ -15,3 +15,12 @@
     stripComponents = 1
     refreshPeriod = "168h"
     include = ["*/*.tmTheme"]
+
+[".config/alacritty/catppuccin"]
+    type = "archive"
+    url = "https://github.com/catppuccin/alacritty/archive/main.tar.gz"
+    exact = true
+    stripComponents = 1
+    refreshPeriod = "168h"
+    include = ["*/*.yml"]
+    

@@ -20,5 +20,6 @@ set modified (stat --format "%Y"  $HOME/.config/fish/fish_plugins)
 set minutes_since_modified (math \((date +%s) - $modified\) / 60)
 
 if test \( $minutes_since_modified -lt 5 \) -o \( $installed -eq 1 \)
-    fisher update
+    echo "Updating fish plugins..."
+    fisher update > /dev/null
 end
