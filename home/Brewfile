@@ -1,0 +1,31 @@
+# Clone of cat(1) with syntax highlighting and Git integration
+# https://formulae.brew.sh/formula/bat
+brew "bat"
+
+# Manage your dotfiles across multiple diverse machines, securely
+# https://formulae.brew.sh/formula/chezmoi
+brew "chezmoi"
+
+# Modern, maintained replacement for ls
+# https://formulae.brew.sh/formula/eza
+brew "eza"
+
+# Syntax-highlighting pager for git and diff output
+# https://formulae.brew.sh/formula/git-delta
+brew "git-delta"
+
+# Modern and intuitive terminal-based text editor
+# https://formulae.brew.sh/formula/micro
+brew "micro"
+
+# Search tool like grep and The Silver Searcher
+# https://formulae.brew.sh/formula/ripgrep
+brew "ripgrep"
+
+# Friendly and fast tool for sending HTTP requests
+# https://formulae.brew.sh/formula/xh
+brew "xh"
+
+# Shell extension to navigate your filesystem faster
+# https://formulae.brew.sh/formula/zoxide
+brew "zoxide"

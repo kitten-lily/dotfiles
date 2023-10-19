@@ -1,0 +1,25 @@
+#!/usr/bin/env fish
+# Plugin file hash: {{ include "private_dot_config/private_fish/fish_plugins" | sha256sum }}
+
+# Install fisher if it wasn't already installed.
+set fisher_uri "https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish"
+set installed 0
+
+if not type -q fisher
+    if not type -q xh
+        echo "Failed to install fisher: xh not available"
+        exit
+    end
+
+    echo "Installing fisher..."
+    if type -q xhs
+        xhs --body $fisher_uri | source
+    else if type -q wget
+        wget -q -O- $fisher_uri | source
+    end
+    set installed 1
+end
+
+# Run fisher update if fisher was installed or fish_plugins was modified less than 5 minutes ago.
+echo "Updating fish plugins..."
+fisher update > /dev/null
