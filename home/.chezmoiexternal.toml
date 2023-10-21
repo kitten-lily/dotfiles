@@ -24,6 +24,14 @@
     refreshPeriod = "168h"
     include = ["*/*.yml"]
 
+[".config/micro/colorschemes"]
+    type = "archive"
+    url = "https://github.com/catppuccin/micro/archive/main.tar.gz"
+    exact = true
+    stripComponents = 2
+    refreshPeriod = "168h"
+    include = ["**/*.micro"]
+
 {{ if eq .chezmoi.os "linux" }}
 [".local/share/konsole/"]
     type = "archive"
