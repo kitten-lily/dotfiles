@@ -23,4 +23,13 @@
     stripComponents = 1
     refreshPeriod = "168h"
     include = ["*/*.yml"]
-    
+
+{{ if eq .chezmoi.os "linux" }}
+[".local/share/konsole/"]
+    type = "archive"
+    url = "https://github.com/catppuccin/konsole/archive/main.tar.gz"
+    exact = false
+    stripComponents = 1
+    refreshPeriod = "168h"
+    include = ["*/*.colorscheme"]
+{{ end }}

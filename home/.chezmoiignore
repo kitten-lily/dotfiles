@@ -3,3 +3,6 @@
 {{ end }}
 Brewfile
 Brewfile.lock.json
+{{ if not (eq .chezmoi.os "linux") }}
+.local/share/konsole
+{{ end }}
