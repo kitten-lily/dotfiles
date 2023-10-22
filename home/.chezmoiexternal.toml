@@ -32,6 +32,14 @@
     refreshPeriod = "168h"
     include = ["**/*.micro"]
 
+[".gitkraken/themes"]
+    type = "archive"
+    url = "https://github.com/davi19/Catppuccin-Gitkraken-Theme/archive/main.tar.gz"
+    exact = false
+    stripComponents = 1
+    refreshPeriod = "168h"
+    include = ["**/*.jsonc"]
+
 {{ if eq .chezmoi.os "linux" }}
 [".local/share/konsole/"]
     type = "archive"
