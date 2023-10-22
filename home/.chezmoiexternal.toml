@@ -40,4 +40,12 @@
     stripComponents = 1
     refreshPeriod = "168h"
     include = ["*/*.colorscheme"]
+
+[".config/Kvantum/"]
+    type = "archive"
+    url = "https://github.com/catppuccin/Kvantum/archive/main.tar.gz"
+    exact = false
+    stripComponents = 2
+    refreshPeriod = "168h"
+    exclude = ["**/*.png", "**/*.sh"]
 {{ end }}

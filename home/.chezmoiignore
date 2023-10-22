@@ -4,6 +4,7 @@
 Brewfile
 Brewfile.lock.json
 {{ if not (eq .chezmoi.os "linux") }}
+.config/Kvantum
 .local/share/konsole
 {{ end }}
 .config/fish/conf.d/_tide_init.fish
