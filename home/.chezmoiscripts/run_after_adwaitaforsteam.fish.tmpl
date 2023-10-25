@@ -1,0 +1,7 @@
+#!/usr/bin/env fish
+
+set theme_dir "$HOME/.local/share/AdwaitaForSteam"
+set color_theme "catppuccin-{{ .catppuccinThemeLower }}"
+
+cd $theme_dir
+./install.py --color-theme $color_theme --target normal
