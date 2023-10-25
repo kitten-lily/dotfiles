@@ -1,9 +1,0 @@
-#!/usr/bin/env fish
-if type -q bat
-    echo "Building bat cache..."
-    bat cache --build > /dev/null
-end
-
-set fish_theme "Catppuccin {{ .catppuccinTheme }}"
-echo "Setting fish theme to $fish_theme..."
-echo "y" | fish_config theme save $fish_theme
