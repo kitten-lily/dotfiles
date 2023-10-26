@@ -1,7 +1,8 @@
 #!/usr/bin/env fish
-
+{{ if eq .chezmoi.hostname "catra" }}
 set theme_dir "$HOME/.local/share/AdwaitaForSteam"
 set color_theme "catppuccin-{{ .catppuccinThemeLower }}"
 
 cd $theme_dir
 ./install.py --color-theme $color_theme
+{{ end }}
