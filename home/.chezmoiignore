@@ -16,3 +16,6 @@ Brewfile.lock.json
 .config/fish/functions/tide.fish
 .bazzite-configured*
 .1password
+{{ if eq .chezmoi.os "windows" }}
+.config/fish
+{{ end }}
