@@ -17,5 +17,6 @@ Brewfile.lock.json
 .bazzite-configured*
 .1password
 {{ if eq .chezmoi.os "windows" }}
+.config/alacritty
 .config/fish
 {{ end }}
