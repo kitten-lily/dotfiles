@@ -1,3 +1,4 @@
+{{ if eq .chezmoi.os "linux" -}}
 #!/usr/bin/env fish
 # Plugin file hash: {{ include "private_dot_config/private_fish/fish_plugins" | sha256sum }}
 
@@ -22,3 +23,4 @@ end
 
 # Run fisher update if fisher was installed or fish_plugins was modified less than 5 minutes ago.
 fisher update
+{{ end -}}
