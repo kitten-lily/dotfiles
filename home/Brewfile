@@ -10,6 +10,10 @@ brew "chezmoi"
 # https://formulae.brew.sh/formula/eza
 brew "eza"
 
+# Simple, fast and user-friendly alternative to find
+# https://formulae.brew.sh/formula/fd
+brew "fd"
+
 # Syntax-highlighting pager for git and diff output
 # https://formulae.brew.sh/formula/git-delta
 brew "git-delta"
