@@ -16,14 +16,6 @@
     refreshPeriod = "168h"
     include = ["*/*.tmTheme"]
 
-[".config/alacritty/catppuccin"]
-    type = "archive"
-    url = "https://github.com/catppuccin/alacritty/archive/main.tar.gz"
-    exact = true
-    stripComponents = 1
-    refreshPeriod = "168h"
-    include = ["*/*.yml"]
-
 [".config/micro/colorschemes"]
     type = "archive"
     url = "https://github.com/catppuccin/micro/archive/main.tar.gz"
@@ -41,6 +33,14 @@
     include = ["**/*.jsonc"]
 
 {{ if eq .chezmoi.os "linux" }}
+[".config/alacritty/catppuccin"]
+    type = "archive"
+    url = "https://github.com/catppuccin/alacritty/archive/main.tar.gz"
+    exact = true
+    stripComponents = 1
+    refreshPeriod = "168h"
+    include = ["*/*.yml"]
+
 [".local/share/konsole/"]
     type = "archive"
     url = "https://github.com/catppuccin/konsole/archive/main.tar.gz"
