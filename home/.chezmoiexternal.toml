@@ -24,7 +24,11 @@
     refreshPeriod = "168h"
     include = ["**/*.micro"]
 
+{{ if eq .chezmoi.os "windows" }}
+["AppData/Roaming/.gitkraken/themes"]
+{{ else }}
 [".gitkraken/themes"]
+{{ end }}
     type = "archive"
     url = "https://github.com/davi19/Catppuccin-Gitkraken-Theme/archive/main.tar.gz"
     exact = false
