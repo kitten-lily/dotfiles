@@ -4,25 +4,6 @@
 # Sets user-defined palette
 palette = "catppuccin_{{ .catppuccinThemeLower }}"
 
-# Prompt
-format = """$all$fill$git_branch$git_status
-$character"""
-
-right_format = """$time"""
-
-# Module settings
-[fill]
-symbol = ' '
-
-[time]
-disabled = false
-format = '🕙[\[ $time \]]($style) '
-
-[git_branch]
-format = '[$symbol$branch(:$remote_branch)]($style) '
-style = 'bold pink'
-ignore_branches = ['master', 'main']
-
 # Palette definitions
 {{ if eq .catppuccinThemeLower "frappe" }}
 {{ includeTemplate ".chezmoitemplates/starship_catppuccin/frappe.toml" }}
