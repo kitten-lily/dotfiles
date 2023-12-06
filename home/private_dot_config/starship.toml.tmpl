@@ -1,0 +1,22 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# Sets user-defined palette
+palette = "catppuccin_{{ .catppuccinThemeLower }}"
+
+right_format = """$time"""
+
+[time]
+disabled = false
+format = '🕙[\[ $time \]]($style) '
+
+# Palette definitions
+{{ if eq .catppuccinThemeLower "frappe" }}
+{{ includeTemplate ".chezmoitemplates/starship_catppuccin/frappe.toml" }}
+{{ else if eq .catppuccinThemeLower "latte" }}
+{{ includeTemplate ".chezmoitemplates/starship_catppuccin/latte.toml" }}
+{{ else if eq .catppuccinThemeLower "macchiato" }}
+{{ includeTemplate ".chezmoitemplates/starship_catppuccin/macchiato.toml" }}
+{{ else if eq .catppuccinThemeLower "mocha" }}
+{{ includeTemplate ".chezmoitemplates/starship_catppuccin/mocha.toml" }}
+{{ end }}
