@@ -36,6 +36,18 @@
     refreshPeriod = "168h"
     include = ["**/*.jsonc"]
 
+{{ if eq .chezmoi.os "windows" }}
+["AppData/Roaming/nushell/nu-themes"]
+{{ else }}
+[".nushell/nu_scripts"]
+{{ end }}
+    type = "archive"
+    url = "https://github.com/ashylily/nu_scripts/archive/main.tar.gz"
+    exact = true
+    stripComponents = 3
+    refreshPeriod = "168h"
+    include = ["nu_scripts-main/themes/nu-themes/catppuccin*.nu"]
+
 {{ if eq .chezmoi.os "linux" }}
 [".config/alacritty/catppuccin"]
     type = "archive"
@@ -69,4 +81,12 @@
     stripComponents = 1
     refreshPeriod = "168h"
 {{ end }}
+{{ end }}
+
+{{ if eq .chezmoi.os "windows" }}
+{{ $vividVersion := "0.9.0" -}}
+[".local/bin/vivid.exe"]
+    type = "archive-file"
+    url = "https://github.com/sharkdp/vivid/releases/download/v{{ $vividVersion }}/vivid-v{{ $vividVersion }}-x86_64-pc-windows-msvc.zip"
+    path = "vivid-v{{ $vividVersion }}-x86_64-pc-windows-msvc/vivid.exe"
 {{ end }}
