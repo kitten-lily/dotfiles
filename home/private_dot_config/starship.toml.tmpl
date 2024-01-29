@@ -5,35 +5,26 @@
 palette = "catppuccin_{{ .catppuccinThemeLower }}"
 
 # Prompt
-format = """$directory$fill$git_branch$git_status
-$os$character"""
-
-right_format = """$time"""
+format = """$os$directory$all"""
 
 # Module settings
 [fill]
 symbol = ' '
 
 [time]
-disabled = false
-format = '🕙[\[ $time \]]($style)'
+disabled = true
 
 [git_branch]
-format = '[$symbol$branch(:$remote_branch)]($style) '
+#format = '[$symbol$branch(:$remote_branch)]($style) '
 style = 'bold pink'
 symbol = " "
 #ignore_branches = ['master', 'main']
 
-[git_status]
-deleted = "󰗨"
-ahead = "󰶣"
-
 [directory]
-style = "bold teal"
+style = "bold fg:text bg:surface0"
 
 [os]
 disabled = false
-style = "bold green"
 
 [os.symbols]
 Alpaquita = " "
@@ -43,11 +34,11 @@ Android = " "
 Arch = " "
 Artix = " "
 CentOS = " "
-Debian = " "
+Debian = "[ ](fg:#d70a53)"
 DragonFly = " "
 Emscripten = " "
 EndeavourOS = " "
-Fedora = " "
+Fedora = "[ ](#3c6eb4)"
 FreeBSD = " "
 Garuda = "󰛓 "
 Gentoo = " "
@@ -55,7 +46,7 @@ HardenedBSD = "󰞌 "
 Illumos = "󰈸 "
 Linux = " "
 Mabox = " "
-Macos = " "
+Macos = "[ ](fg:#ffffff)"
 Manjaro = " "
 Mariner = " "
 MidnightBSD = " "
@@ -74,7 +65,7 @@ Solus = "󰠳 "
 SUSE = " "
 Ubuntu = " "
 Unknown = " "
-Windows = "󰍲 "
+Windows = "[󰍲 ](fg:#0078d4)"
 
 # Palette definitions
 {{ if eq .catppuccinThemeLower "frappe" }}
