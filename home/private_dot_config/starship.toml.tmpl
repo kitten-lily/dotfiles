@@ -1,30 +1,54 @@
 # Get editor completions based on the config schema
-"$schema" = 'https://starship.rs/config-schema.json'
+"$schema" = "https://starship.rs/config-schema.json"
 
 # Sets user-defined palette
-palette = "catppuccin_{{ .catppuccinThemeLower }}"
+palette = "catppuccin_macchiato"
 
 # Prompt
-format = """$os$directory$all"""
+format = """\
+$os\
+$directory\
+[](fg:pink bg:lavender)\
+$git_branch$git_status\
+[](fg:lavender bg:peach)\
+$dotnet\
+$nodejs\
+[](fg:peach)\
+$all"""
 
 # Module settings
 [fill]
-symbol = ' '
+symbol = " "
 
 [time]
 disabled = true
 
 [git_branch]
-#format = '[$symbol$branch(:$remote_branch)]($style) '
-style = 'bold pink'
-symbol = " "
-#ignore_branches = ['master', 'main']
+format = "[ $symbol$branch(:$remote_branch)]($style)"
+style = "bg:lavender fg:surface1"
+symbol = " "
+#ignore_branches = ["master", "main"]
+#always_show_remote = true
 
 [directory]
-style = "bold fg:text bg:surface0"
+style = "fg:surface1 bg:pink"
+format = "[ $path]($style)[$read_only]($read_only_style)"
 
 [os]
 disabled = false
+style = "bg:blue"
+format = "[](fg:blue)[$symbol](bg:blue fg:white)[](fg:blue bg:pink)"
+
+[dotnet]
+symbol = " "
+format = "[ $symbol($tfm)]($style)"
+style = "bg:peach fg:surface1"
+
+[nodejs]
+symbol = " "
+style = "bg:peach fg:surface1"
+format = "[ $symbol($version )]($style)"
+version_format = "v${major}"
 
 [os.symbols]
 Alpaquita = " "
@@ -34,11 +58,11 @@ Android = " "
 Arch = " "
 Artix = " "
 CentOS = " "
-Debian = "[ ](fg:#d70a53)"
+Debian = "[ ](fg:#d70a53 bg:blue)"
 DragonFly = " "
 Emscripten = " "
 EndeavourOS = " "
-Fedora = "[ ](#3c6eb4)"
+Fedora = "[󰣛 ](fg:#3c6eb4 bg:blue)"
 FreeBSD = " "
 Garuda = "󰛓 "
 Gentoo = " "
@@ -46,7 +70,7 @@ HardenedBSD = "󰞌 "
 Illumos = "󰈸 "
 Linux = " "
 Mabox = " "
-Macos = "[ ](fg:#ffffff)"
+Macos = "[ ](fg:#ffffff bg:blue)"
 Manjaro = " "
 Mariner = " "
 MidnightBSD = " "
@@ -65,15 +89,35 @@ Solus = "󰠳 "
 SUSE = " "
 Ubuntu = " "
 Unknown = " "
-Windows = "[󰍲 ](fg:#0078d4)"
+Windows = "[ ](fg:#0078d4 bg:blue)"
 
 # Palette definitions
-{{ if eq .catppuccinThemeLower "frappe" }}
-{{ includeTemplate ".chezmoitemplates/starship_catppuccin/frappe.toml" }}
-{{ else if eq .catppuccinThemeLower "latte" }}
-{{ includeTemplate ".chezmoitemplates/starship_catppuccin/latte.toml" }}
-{{ else if eq .catppuccinThemeLower "macchiato" }}
-{{ includeTemplate ".chezmoitemplates/starship_catppuccin/macchiato.toml" }}
-{{ else if eq .catppuccinThemeLower "mocha" }}
-{{ includeTemplate ".chezmoitemplates/starship_catppuccin/mocha.toml" }}
-{{ end }}
+
+[palettes.catppuccin_macchiato]
+rosewater = "#f4dbd6"
+flamingo = "#f0c6c6"
+pink = "#f5bde6"
+mauve = "#c6a0f6"
+red = "#ed8796"
+maroon = "#ee99a0"
+peach = "#f5a97f"
+yellow = "#eed49f"
+green = "#a6da95"
+teal = "#8bd5ca"
+sky = "#91d7e3"
+sapphire = "#7dc4e4"
+blue = "#8aadf4"
+lavender = "#b7bdf8"
+text = "#cad3f5"
+subtext1 = "#b8c0e0"
+subtext0 = "#a5adcb"
+overlay2 = "#939ab7"
+overlay1 = "#8087a2"
+overlay0 = "#6e738d"
+surface2 = "#5b6078"
+surface1 = "#494d64"
+surface0 = "#363a4f"
+base = "#24273a"
+mantle = "#1e2030"
+crust = "#181926"
+
