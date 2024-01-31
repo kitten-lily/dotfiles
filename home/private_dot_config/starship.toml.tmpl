@@ -6,11 +6,13 @@ palette = "catppuccin_macchiato"
 
 # Prompt
 format = """\
+[ ](bg:surface0)\
 $os\
+[](fg:surface0 bg:surface1)\
 $directory\
-[](fg:pink bg:lavender)\
+[](fg:surface1 bg:surface2)\
 $git_branch$git_status\
-[](fg:lavender bg:peach)\
+[](fg:surface2 bg:peach)\
 $dotnet\
 $nodejs\
 [](fg:peach)\
@@ -25,19 +27,19 @@ disabled = true
 
 [git_branch]
 format = "[ $symbol$branch(:$remote_branch)]($style)"
-style = "bg:lavender fg:surface1"
+style = "bg:surface2 fg:lavender"
 symbol = " "
 #ignore_branches = ["master", "main"]
 #always_show_remote = true
 
 [directory]
-style = "fg:surface1 bg:pink"
+style = "fg:pink bg:surface1"
 format = "[ $path]($style)[$read_only]($read_only_style)"
 
 [os]
 disabled = false
-style = "bg:blue"
-format = "[](fg:blue)[$symbol](bg:blue fg:white)[](fg:blue bg:pink)"
+style = "bg:surface0 fg:white"
+format = "[$symbol]($style)"
 
 [dotnet]
 symbol = " "
@@ -89,7 +91,7 @@ Solus = "󰠳 "
 SUSE = " "
 Ubuntu = " "
 Unknown = " "
-Windows = "[ ](fg:#0078d4 bg:blue)"
+Windows = "[ ](fg:#0078d4 bg:surface0)"
 
 # Palette definitions
 
