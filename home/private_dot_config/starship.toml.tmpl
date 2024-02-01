@@ -16,6 +16,8 @@ $git_branch$git_status\
 $dotnet\
 $nodejs\
 [](fg:peach)\
+$fill\
+$cmd_duration\
 $all"""
 
 # Module settings
@@ -32,25 +34,32 @@ symbol = " "
 #ignore_branches = ["master", "main"]
 #always_show_remote = true
 
+[git_status]
+style = "bg:surface2 fg:red"
+format = '([\[$all_status$ahead_behind\]]($style))'
+
 [directory]
 style = "fg:pink bg:surface1"
 format = "[ $path]($style)[$read_only]($read_only_style)"
+
+[dotnet]
+symbol = " "
+format = "[ $symbol($tfm)]($style)"
+style = "bg:peach fg:base"
+
+[nodejs]
+symbol = " "
+style = "bg:peach fg:base"
+format = "[ $symbol($version )]($style)"
+version_format = "v${major}"
+
+[cmd_duration]
+format = '[$duration]($style) '
 
 [os]
 disabled = false
 style = "bg:surface0 fg:white"
 format = "[$symbol]($style)"
-
-[dotnet]
-symbol = " "
-format = "[ $symbol($tfm)]($style)"
-style = "bg:peach fg:surface1"
-
-[nodejs]
-symbol = " "
-style = "bg:peach fg:surface1"
-format = "[ $symbol($version )]($style)"
-version_format = "v${major}"
 
 [os.symbols]
 Alpaquita = " "
