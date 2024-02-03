@@ -23,4 +23,5 @@ nerd-fonts
 {{ end }}
 {{ if not (eq .chezmoi.os "windows") }}
 AppData
+Documents/PowerShell
 {{ end }}
