@@ -1,4 +1,4 @@
-{{ if eq .chezmoi.os "linux" -}}
+{{ if and (eq .chezmoi.os "linux") .features.fish -}}
 #!/usr/bin/env fish
 set fish_theme "Catppuccin {{ .catppuccin.theme }}"
 echo "y" | fish_config theme save $fish_theme
