@@ -9,3 +9,4 @@ kde = false
 fish = false
 alacritty = false
 nerdfonts = false
+gitkraken = true

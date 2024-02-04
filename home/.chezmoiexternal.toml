@@ -24,6 +24,7 @@
     refreshPeriod = "168h"
     include = ["**/*.micro"]
 
+{{ if .features.gitkraken }}
 {{ if eq .chezmoi.os "windows" }}
 ["AppData/Roaming/.gitkraken/themes"]
 {{ else }}
@@ -35,6 +36,7 @@
     stripComponents = 1
     refreshPeriod = "168h"
     include = ["**/*.jsonc"]
+{{ end }}
 
 {{ if eq .chezmoi.os "windows" }}
 ["AppData/Roaming/nushell/nu-themes"]
@@ -48,7 +50,7 @@
     refreshPeriod = "168h"
     include = ["nu_scripts-main/themes/nu-themes/catppuccin*.nu"]
 
-{{ if eq .chezmoi.os "linux" }}
+{{ if .features.alacritty }}
 [".config/alacritty/catppuccin"]
     type = "archive"
     url = "https://github.com/catppuccin/alacritty/archive/main.tar.gz"
