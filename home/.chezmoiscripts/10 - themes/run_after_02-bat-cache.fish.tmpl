@@ -1,4 +1,4 @@
-{{ if eq .chezmoi.os "linux" -}}
+{{ if and (eq .chezmoi.os "linux") .features.fish -}}
 #!/usr/bin/env fish
 if type -q bat
     bat cache --build > /dev/null
