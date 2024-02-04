@@ -37,3 +37,11 @@ brew "xh"
 # Shell extension to navigate your filesystem faster
 # https://formulae.brew.sh/formula/zoxide
 brew "zoxide"
+
+# Cross-shell prompt for astronauts
+# https://formulae.brew.sh/formula/starship
+brew "starship"
+
+# Modern shell for the GitHub era
+# https://formulae.brew.sh/formula/nushell
+brew "nu"
