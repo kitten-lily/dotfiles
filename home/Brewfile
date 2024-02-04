@@ -44,4 +44,4 @@ brew "starship"
 
 # Modern shell for the GitHub era
 # https://formulae.brew.sh/formula/nushell
-brew "nu"
+brew "nushell"
