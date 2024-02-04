@@ -42,7 +42,7 @@
     {
         "defaults": 
         {
-            "colorScheme": "Catppuccin {{ .catppuccinTheme }}",
+            "colorScheme": "Catppuccin {{ .catppuccin.theme }}",
             "font": 
             {
                 "face": "FantasqueSansM Nerd Font",
@@ -304,7 +304,7 @@
             "yellow": "#808000"
         }
     ],
-    "theme": "Catppuccin {{ .catppuccinTheme }}",
+    "theme": "Catppuccin {{ .catppuccin.theme }}",
     "themes": 
     [
         {{- includeTemplate ".chezmoitemplates/windows-terminal_catppuccin/frappeTheme.json" -}},

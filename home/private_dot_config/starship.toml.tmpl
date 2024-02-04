@@ -2,7 +2,7 @@
 "$schema" = "https://starship.rs/config-schema.json"
 
 # Sets user-defined palette
-palette = "catppuccin_{{ .catppuccinThemeLower }}"
+palette = "catppuccin_{{ lower .catppuccin.theme }}"
 
 # Prompt
 format = """\
@@ -103,12 +103,12 @@ Unknown = " "
 Windows = "[ ](fg:#0078d4 bg:surface0)"
 
 # Palette definitions
-{{ if eq .catppuccinThemeLower "frappe" }}
+{{ if eq (lower .catppuccin.theme) "frappe" }}
 {{ includeTemplate ".chezmoitemplates/starship_catppuccin/frappe.toml" }}
-{{ else if eq .catppuccinThemeLower "latte" }}
+{{ else if eq (lower .catppuccin.theme) "latte" }}
 {{ includeTemplate ".chezmoitemplates/starship_catppuccin/latte.toml" }}
-{{ else if eq .catppuccinThemeLower "macchiato" }}
+{{ else if eq (lower .catppuccin.theme) "macchiato" }}
 {{ includeTemplate ".chezmoitemplates/starship_catppuccin/macchiato.toml" }}
-{{ else if eq .catppuccinThemeLower "mocha" }}
+{{ else if eq (lower .catppuccin.theme) "mocha" }}
 {{ includeTemplate ".chezmoitemplates/starship_catppuccin/mocha.toml" }}
 {{ end }}
