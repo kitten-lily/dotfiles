@@ -41,7 +41,7 @@
 {{ if eq .chezmoi.os "windows" }}
 ["AppData/Roaming/nushell/nu-themes"]
 {{ else }}
-[".nushell/nu_scripts"]
+[".config/nushell/nu-themes"]
 {{ end }}
     type = "archive"
     url = "https://github.com/ashylily/nu_scripts/archive/main.tar.gz"
