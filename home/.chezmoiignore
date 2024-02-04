@@ -1,9 +1,11 @@
 {{ if not (and (eq .chezmoi.os "linux") (.chezmoi.kernel.osrelease | lower | contains "microsoft")) }}
+{{ if eq .features.fish true }}
 .config/fish/conf.d/wsl-ssh-agent.fish
+{{ end }}
 {{ end }}
 Brewfile
 Brewfile.lock.json
-{{ if not (eq .chezmoi.os "linux") }}
+{{ if not (and (eq .chezmoi.os "linux") (eq .features.kde true)) }}
 .config/Kvantum
 .local/share/konsole
 {{ end }}
@@ -16,9 +18,13 @@ Brewfile.lock.json
 .config/fish/functions/tide.fish
 .bazzite-configured*
 .1password
-{{ if eq .chezmoi.os "windows" }}
-.config/alacritty
+{{ if or (eq .chezmoi.os "windows") (eq .features.fish false) }}
 .config/fish
+{{ end }}
+{{ if eq .features.alacritty false }}
+.config/alacritty
+{{ end }}
+{{ if or (eq .chezmoi.os "windows") (eq .features.nerdfonts false) }}
 nerd-fonts
 {{ end }}
 {{ if not (eq .chezmoi.os "windows") }}
