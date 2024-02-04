@@ -4,6 +4,7 @@
             "tab": 
             {
                 "background": "#EFF1F5FF",
+                "iconStyle": "default",
                 "showCloseButton": "always",
                 "unfocusedBackground": null
             },
@@ -15,6 +16,9 @@
             "window": 
             {
                 "applicationTheme": "light",
+                "experimental.rainbowFrame": false,
+                "frame": null,
+                "unfocusedFrame": null,
                 "useMica": true
             }
         }
