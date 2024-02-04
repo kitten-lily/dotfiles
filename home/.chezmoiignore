@@ -30,4 +30,7 @@ nerd-fonts
 {{ if not (eq .chezmoi.os "windows") }}
 AppData
 Documents/PowerShell
+{{ if not (or (.features.gnome .features.kde)) }}
+Documents
+{{ end }}
 {{ end }}
