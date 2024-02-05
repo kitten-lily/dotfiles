@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-sudo apt-get install -y \
+sudo apt-get update && install -y \
     wget \
     curl \
     git \
