@@ -58,7 +58,9 @@
     stripComponents = 1
     refreshPeriod = "168h"
     include = ["*/*.yml"]
+{{ end }}
 
+{{ if .features.kde }}
 [".local/share/konsole/"]
     type = "archive"
     url = "https://github.com/catppuccin/konsole/archive/main.tar.gz"
@@ -74,6 +76,7 @@
     stripComponents = 2
     refreshPeriod = "168h"
     exclude = ["**/*.png", "**/*.sh"]
+{{ end }}
 
 {{ if eq .chezmoi.hostname "catra" }}
 [".local/share/AdwaitaForSteam"]
@@ -83,6 +86,15 @@
     stripComponents = 1
     refreshPeriod = "168h"
 {{ end }}
+
+{{ if .features.fish }}
+[".config/fish/themes"]
+    type = "archive"
+    url = "https://github.com/catppuccin/fish/archive/refs/heads/main.tar.gz"
+    exact = true
+    stripComponents = 1
+    refreshPeriod = "168h"
+    include = ["*/*.theme"]
 {{ end }}
 
 {{ if eq .chezmoi.os "windows" }}
