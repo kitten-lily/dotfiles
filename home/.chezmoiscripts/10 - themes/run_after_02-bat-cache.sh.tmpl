@@ -1,0 +1,7 @@
+{{ if eq .chezmoi.os "linux" -}}
+#!/usr/bin/env sh
+if [ test -x bat ]
+then
+    bat cache --build > /dev/null
+fi
+{{ end -}}
