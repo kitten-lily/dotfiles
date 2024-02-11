@@ -12,3 +12,4 @@ nerdfonts = false
 gitkraken = true
 gnome = false
 nushell = true
+devbox = false
