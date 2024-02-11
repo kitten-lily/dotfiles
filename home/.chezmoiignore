@@ -18,6 +18,10 @@ Brewfile.lock.json
 .config/fish/functions/tide.fish
 .bazzite-configured*
 .1password
+{{ if not .features.nushell }}
+.config/nushell
+AppData/Roaming/nushell
+{{ end }}
 {{ if or (eq .chezmoi.os "windows") (not .features.fish) }}
 .config/fish
 {{ end }}
