@@ -9,7 +9,7 @@ Brewfile.lock.json
 .config/Kvantum
 .local/share/konsole
 {{ end }}
-{{ if and (.features.fish (not .features.devbox) }}
+{{ if and (.features.fish (not .features.devbox)) }}
 .config/fish/conf.d/
 {{ end }}
 .config/fish/conf.d/_tide_init.fish
