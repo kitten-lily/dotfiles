@@ -38,6 +38,7 @@
     include = ["**/*.jsonc"]
 {{ end }}
 
+{{ if .features.nushell }}
 {{ if eq .chezmoi.os "windows" }}
 ["AppData/Roaming/nushell/nu-themes"]
 {{ else }}
@@ -49,6 +50,7 @@
     stripComponents = 3
     refreshPeriod = "168h"
     include = ["nu_scripts-main/themes/nu-themes/catppuccin*.nu"]
+{{ end }}
 
 {{ if .features.alacritty }}
 [".config/alacritty/catppuccin"]

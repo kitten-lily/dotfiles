@@ -42,10 +42,6 @@ brew "zoxide"
 # https://formulae.brew.sh/formula/starship
 brew "starship"
 
-# Modern shell for the GitHub era
-# https://formulae.brew.sh/formula/nushell
-brew "nushell"
-
 # Generator for LS_COLORS with support for multiple color themes
 # https://formulae.brew.sh/formula/vivid
 brew "vivid"
