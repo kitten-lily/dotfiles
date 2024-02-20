@@ -14,8 +14,8 @@
     "init_hook": [],
     "scripts": {
       "chezmoi": [
-        "chezmoi init --apply https://github.com/ashylily/dotfiles.git",
-        "chezmoi git remote -- set-url origin git@github.com:ashylily/dotfiles.git"
+        "chezmoi init --apply https://github.com/kitten-lily/dotfiles.git",
+        "chezmoi git remote -- set-url origin git@github.com:kitten-lily/dotfiles.git"
       ]
     }
   }

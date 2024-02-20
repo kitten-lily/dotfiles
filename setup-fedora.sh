@@ -4,6 +4,6 @@ echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> ~/.bashrc
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 brew install chezmoi
-chezmoi init --apply ashylily/dotfiles
+chezmoi init --apply kitten-lily/dotfiles
 
 echo nu >> ~/.bashrc

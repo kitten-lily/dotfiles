@@ -45,7 +45,7 @@
 [".config/nushell/nu-themes"]
 {{ end }}
     type = "archive"
-    url = "https://github.com/ashylily/nu_scripts/archive/main.tar.gz"
+    url = "https://github.com/kitten-lily/nu_scripts/archive/main.tar.gz"
     exact = true
     stripComponents = 3
     refreshPeriod = "168h"
