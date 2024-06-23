@@ -1,0 +1,8 @@
+{{ if .firefox -}}
+.local/share/firefox-gnome-theme:
+    type: archive
+    url: https://github.com/rafaelmardojai/firefox-gnome-theme/archive/refs/tags/v127.zip
+    exact: true
+    stripComponents: 1
+    refreshPeriod: 168h
+{{ end -}}

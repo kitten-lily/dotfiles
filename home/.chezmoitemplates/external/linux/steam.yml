@@ -1,0 +1,6 @@
+.local/share/AdwaitaForSteam:
+    type: archive
+    url: https://github.com/tkashkin/Adwaita-for-Steam/archive/master.tar.gz
+    exact: true
+    stripComponents: 1
+    refreshPeriod: 168h

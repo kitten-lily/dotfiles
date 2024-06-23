@@ -1,0 +1,8 @@
+{{ if and (eq .chezmoi.os "linux") (.software.firefox) -}}
+#!/usr/bin/env fish
+
+set theme_dir "$HOME/.local/share/firefox-gnome-theme"
+
+cd $theme_dir
+./scripts/auto-install.sh
+{{ end -}}

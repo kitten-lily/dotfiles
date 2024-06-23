@@ -1,3 +1,4 @@
+{{ if .bat -}}
 .config/bat/themes:
     type: archive
     url: https://github.com/catppuccin/bat/archive/main.tar.gz
@@ -6,3 +7,4 @@
     refreshPeriod: 168h
     include:
         - "**/themes/*.tmTheme"
+{{ end -}}
