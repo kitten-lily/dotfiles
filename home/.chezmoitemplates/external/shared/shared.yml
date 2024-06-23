@@ -1,2 +1,3 @@
 {{ includeTemplate ".chezmoitemplates/external/shared/bat.yml" .software }}
 {{ includeTemplate ".chezmoitemplates/external/shared/micro.yml" .software }}
+{{ includeTemplate ".chezmoitemplates/external/shared/gitkraken.yml" . }}

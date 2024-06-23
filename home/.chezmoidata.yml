@@ -1,5 +1,6 @@
 software:
-    bat: false
-    micro: false
-    steam: false
+    bat: true
+    micro: true
+    steam: true
     firefox: true
+    gitkraken: true
