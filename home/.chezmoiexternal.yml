@@ -1,0 +1,4 @@
+{{ includeTemplate ".chezmoitemplates/external/shared/shared.yml.tmpl" }}
+{{ if eq .chezmoi.os "linux" -}}
+{{ includeTemplate ".chezmoitemplates/external/linux/linux-external.yml.tmpl" }}
+{{ end -}}
