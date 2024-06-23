@@ -1,0 +1,6 @@
+{{ if .firefox.ultima -}}
+{{- template "firefox/ultima/userContent.css" . -}}
+{{ end -}}
+{{ if .firefox.edgyarc -}}
+{{- template "firefox/edgyarc/userContent.css" . -}}
+{{ end -}}

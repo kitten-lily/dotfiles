@@ -1,0 +1,24 @@
+brew "bat"
+brew "chezmoi"
+brew "eza"
+brew "fd"
+brew "git"
+brew "git-delta"
+brew "gping"
+brew "micro"
+brew "ripgrep"
+brew "starship"
+brew "vivid"
+brew "xh"
+brew "zoxide"
+
+brew "fish" if OS.mac?
+cask "battle-net" if OS.mac?
+cask "gitkraken" if OS.mac?
+cask "proton-drive" if OS.mac?
+cask "proton-mail" if OS.mac?
+cask "protonvpn" if OS.mac?
+cask "raycast" if OS.mac?
+cask "vivaldi" if OS.mac?
+cask "warp" if OS.mac?
+cask "zed" if OS.mac?

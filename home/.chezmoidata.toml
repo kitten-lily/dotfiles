@@ -1,0 +1,21 @@
+defaultWindowsTerminalProfile = "{574e775e-4f2a-5b96-ac1e-a2962a402336}"
+
+[catppuccin]
+flavor = "Pink"
+theme = "Macchiato"
+ 
+[firefox] 
+ultima = false 
+edgyarc = true 
+ 
+[features]
+kde = false
+fish = false
+alacritty = false
+nerdfonts = false
+gitkraken = true
+gnome = false
+nushell = false
+devbox = false
+gaming = false
+firefox = true

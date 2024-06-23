@@ -1,0 +1,9 @@
+{{ if .features.gnome -}}
+#!/usr/bin/env fish
+
+set theme_dir "$HOME/.local/share/AdwaitaForSteam"
+set color_theme "catppuccin-{{ lower .catppuccin.theme }}"
+
+cd $theme_dir
+./install.py --color-theme $color_theme
+{{ end -}}
