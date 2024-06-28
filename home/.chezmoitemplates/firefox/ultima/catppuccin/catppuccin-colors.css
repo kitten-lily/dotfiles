@@ -1,0 +1,15 @@
+@media (prefers-color-scheme: dark) {
+  :root,
+  body,
+  * {
+    --catppuccin-base: rgb(36, 39, 58);
+    --catppuccin-mantle: rgb(30, 32, 48);
+    --catppuccin-crust: rgb(24, 25, 38);
+    --catppuccin-overlay0: rgb(54, 58, 79);
+    --catppuccin-overlay0-30: rgba(54, 58, 79, 0.3);
+    --catppuccin-overlay2: rgb(147, 154, 183);
+    --catppuccin-text: rgb(202, 211, 245);
+    --catppuccin-pink: rgb(245, 189, 230);
+    --catppuccin-pink-30: rgba(245, 189, 230, 0.3);
+  }
+}

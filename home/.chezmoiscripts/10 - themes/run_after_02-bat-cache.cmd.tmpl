@@ -1,0 +1,3 @@
+{{ if eq .chezmoi.os "windows" -}}
+@bat cache --source %USERPROFILE%\.config\bat --build > NUL
+{{ end -}}

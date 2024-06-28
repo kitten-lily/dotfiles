@@ -1,0 +1,123 @@
+# Get editor completions based on the config schema
+"$schema" = "https://starship.rs/config-schema.json"
+
+# Sets user-defined palette
+palette = "catppuccin_{{ lower .catppuccin.theme }}"
+
+# Prompt
+format = """\
+[ ](bg:surface0)\
+$os\
+[](fg:surface0 bg:surface1)\
+$directory\
+[](fg:surface1 bg:surface2)\
+$git_branch$git_status\
+[](fg:surface2 bg:peach)\
+$dotnet\
+$nodejs\
+[](fg:peach)\
+$fill\
+$cmd_duration\
+$all"""
+
+# Module settings
+[fill]
+symbol = " "
+
+[username]
+format = '[$user]($style)'
+style_user = "bold rosewater"
+
+[hostname]
+format = '[$ssh_symbol$hostname]($style)'
+style = "bold maroon"
+ssh_symbol = '  '
+
+[time]
+disabled = true
+
+[git_branch]
+format = "[ $symbol$branch(:$remote_branch)]($style)"
+style = "bg:surface2 fg:lavender"
+symbol = " "
+#ignore_branches = ["master", "main"]
+#always_show_remote = true
+
+[git_status]
+style = "bg:surface2 fg:red"
+format = '([\[$all_status$ahead_behind\]]($style))'
+
+[directory]
+style = "fg:pink bg:surface1"
+format = "[ $path]($style)[$read_only]($read_only_style)"
+
+[dotnet]
+symbol = " "
+format = "[ $symbol($tfm)]($style)"
+style = "bg:peach fg:base"
+
+[nodejs]
+symbol = " "
+style = "bg:peach fg:base"
+format = "[ $symbol($version )]($style)"
+version_format = "v${major}"
+
+[cmd_duration]
+format = '[$duration]($style) '
+
+[os]
+disabled = false
+style = "bg:surface0 fg:white"
+format = "[$symbol]($style)"
+
+[os.symbols]
+Alpaquita = " "
+Alpine = " "
+Amazon = " "
+Android = " "
+Arch = " "
+Artix = " "
+CentOS = " "
+Debian = "[ ](fg:#d70a53 bg:surface0)"
+DragonFly = " "
+Emscripten = " "
+EndeavourOS = " "
+Fedora = "[󰣛 ](fg:#3c6eb4 bg:surface0)"
+FreeBSD = " "
+Garuda = "󰛓 "
+Gentoo = " "
+HardenedBSD = "󰞌 "
+Illumos = "󰈸 "
+Linux = " "
+Mabox = " "
+Macos = "[ ](fg:#ffffff bg:surface0)"
+Manjaro = " "
+Mariner = " "
+MidnightBSD = " "
+Mint = " "
+NetBSD = " "
+NixOS = " "
+OpenBSD = "󰈺 "
+openSUSE = " "
+OracleLinux = "󰌷 "
+Pop = " "
+Raspbian = " "
+Redhat = " "
+RedHatEnterprise = " "
+Redox = "󰀘 "
+Solus = "󰠳 "
+SUSE = " "
+Ubuntu = " "
+Unknown = " "
+Windows = "[ ](fg:#0078d4 bg:surface0)"
+
+# Palette definitions
+{{ if eq (lower .catppuccin.theme) "frappe" }}
+{{ includeTemplate ".chezmoitemplates/starship_catppuccin/frappe.toml" }}
+{{ else if eq (lower .catppuccin.theme) "latte" }}
+{{ includeTemplate ".chezmoitemplates/starship_catppuccin/latte.toml" }}
+{{ else if eq (lower .catppuccin.theme) "macchiato" }}
+{{ includeTemplate ".chezmoitemplates/starship_catppuccin/macchiato.toml" }}
+{{ else if eq (lower .catppuccin.theme) "mocha" }}
+{{ includeTemplate ".chezmoitemplates/starship_catppuccin/mocha.toml" }}
+{{ end }}

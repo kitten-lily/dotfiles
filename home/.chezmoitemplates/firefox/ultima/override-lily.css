@@ -1,0 +1,28 @@
+/*--
+Index: For ctrl+f search of a section
+
+--Pinned tabs-- line 13
+--*/
+
+@media (-moz-bool-pref: "ultima.tabs.vertical") {
+  /* Hide the sound indicator label on tabs */
+  .tabbrowser-tab .tab-secondary-label[soundplaying] {
+    display: none;
+  }
+
+  /*-------Pinned tabs---------*/
+
+  .tabbrowser-tab:is([pinned]) {
+    width: fit-content !important;
+  }
+  .tab-label-container:is([pinned]) {
+    display: none;
+  }
+  .tab-content:is([pinned]) {
+    padding: 15px 20px !important;
+  }
+
+  .tab-icon-stack:is([pinned]) {
+    margin: 0;
+  }
+}

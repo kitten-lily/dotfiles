@@ -1,0 +1,63 @@
+{{ if not (and (eq .chezmoi.os "linux") (.chezmoi.kernel.osrelease | lower | contains "microsoft")) }}
+{{ if .features.fish }}
+.config/fish/conf.d/wsl-ssh-agent.fish
+{{ end }}
+{{ end }}
+Brewfile
+Brewfile.*
+{{ if not (and (eq .chezmoi.os "linux") .features.kde) }}
+.config/Kvantum
+.local/share/konsole
+{{ end }}
+{{ if not .features.devbox }}
+.config/fish/conf.d/devbox.fish
+{{ end }}
+.config/fish/conf.d/_tide_init.fish
+.config/fish/functions/_tide*
+.config/fish/functions/fish_mode_prompt.fish
+.config/fish/functions/fish_prompt.fish
+.config/fish/functions/fisher.fish
+.config/fish/functions/tide
+.config/fish/functions/tide.fish
+.bazzite-configured*
+.1password
+{{ if not .features.nushell }}
+.config/nushell
+AppData/Roaming/nushell
+{{ end }}
+{{ if or (eq .chezmoi.os "windows") (not .features.fish) }}
+.config/fish
+{{ end }}
+{{ if not .features.alacritty }}
+.config/alacritty
+{{ end }}
+{{ if or (eq .chezmoi.os "windows") (not .features.nerdfonts) }}
+nerd-fonts
+{{ end }}
+{{ if not (eq .chezmoi.os "windows") }}
+AppData
+Documents/PowerShell
+{{ if not (or .features.gnome .features.kde) }}
+Documents
+{{ end }}
+{{ if not .features.gnome }}
+.config/paperwm
+{{ end }}
+{{ end }}
+{{ if not (eq .chezmoi.os "linux") }}
+.config/no-show-user-motd
+.config/paperwm 
+.config/hyfetch.json 
+.var
+{{ end }}
+dconf.ini
+{{ if not .features.firefox }}
+AppData/Roaming/Mozilla
+.var/app/org.mozilla.firefox
+{{ end }}
+{{ if not .firefox.ultima }}
+AppData/Roaming/Mozilla/Firefox/Profiles/4ri1crhg.default-release/chrome/catppuccin
+AppData/Roaming/Mozilla/Firefox/Profiles/4ri1crhg.default-release/chrome/override-lily.css
+.var/app/org.mozilla.firefox/.mozilla/firefox/3ml2q8t2.default-release/chrome/catppuccin
+.var/app/org.mozilla.firefox/.mozilla/firefox/3ml2q8t2.default-release/chrome/override-lily.css
+{{ end }}

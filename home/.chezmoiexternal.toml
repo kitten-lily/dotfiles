@@ -1,0 +1,148 @@
+{{ if and (eq .chezmoi.os "linux") (.chezmoi.kernel.osrelease | lower | contains "microsoft") }}
+# Socket relay for WSL
+{{ $npiperelayVersion := "1.5.0" -}}
+[".local/bin/npiperelay.exe"]
+    type = "file"
+    url = "https://github.com/albertony/npiperelay/releases/download/v{{ $npiperelayVersion }}/npiperelay_windows_amd64.exe"
+    refreshPeriod = "168h"
+    executable = true
+    checksum.sha256 = "4752c108432382a6e77afaa3a5d9f9908e466a2cad1de4392e7f3e0775dfb1ab"
+{{ end }}
+
+[".config/bat/themes"]
+    type = "archive"
+    url = "https://github.com/catppuccin/bat/archive/main.tar.gz"
+    exact = true
+    stripComponents = 2
+    refreshPeriod = "168h"
+    include = ["**/themes/*.tmTheme"]
+
+[".config/micro/colorschemes"]
+    type = "archive"
+    url = "https://github.com/catppuccin/micro/archive/main.tar.gz"
+    exact = true
+    stripComponents = 2
+    refreshPeriod = "168h"
+    include = ["**/*.micro"]
+
+{{ if .features.gitkraken }}
+# GitKraken
+{{ if eq .chezmoi.os "windows" }}
+["AppData/Roaming/.gitkraken/themes"]
+{{ else }}
+[".gitkraken/themes"]
+{{ end }}
+    type = "archive"
+    url = "https://github.com/davi19/gitkraken/archive/refs/heads/master.tar.gz"
+    exact = false
+    stripComponents = 2
+    refreshPeriod = "168h"
+    include = ["**/*.jsonc"]
+{{ end }}
+
+{{ if .features.nushell }}
+{{ if eq .chezmoi.os "windows" }}
+["AppData/Roaming/nushell/nu-themes"]
+{{ else }}
+[".config/nushell/nu-themes"]
+{{ end }}
+    type = "archive"
+    url = "https://github.com/kitten-lily/nu_scripts/archive/main.tar.gz"
+    exact = true
+    stripComponents = 3
+    refreshPeriod = "168h"
+    include = ["nu_scripts-main/themes/nu-themes/catppuccin*.nu"]
+{{ end }}
+
+{{ if .features.alacritty }}
+[".config/alacritty/catppuccin"]
+    type = "archive"
+    url = "https://github.com/catppuccin/alacritty/archive/main.tar.gz"
+    exact = true
+    stripComponents = 1
+    refreshPeriod = "168h"
+    include = ["*/*.yml"]
+{{ end }}
+
+{{ if .features.kde }}
+[".local/share/konsole/"]
+    type = "archive"
+    url = "https://github.com/catppuccin/konsole/archive/main.tar.gz"
+    exact = false
+    stripComponents = 1
+    refreshPeriod = "168h"
+    include = ["*/*.colorscheme"]
+
+[".config/Kvantum/"]
+    type = "archive"
+    url = "https://github.com/catppuccin/Kvantum/archive/main.tar.gz"
+    exact = false
+    stripComponents = 2
+    refreshPeriod = "168h"
+    exclude = ["**/*.png", "**/*.sh"]
+{{ end }}
+
+{{ if .features.gaming }}
+{{ if .features.gnome }}
+[".local/share/AdwaitaForSteam"]
+    type = "archive"
+    url = "https://github.com/tkashkin/Adwaita-for-Steam/archive/master.tar.gz"
+    exact = true
+    stripComponents = 1
+    refreshPeriod = "168h"
+{{ end }}
+[".config/heroic/themes"]
+    type = "archive"
+    url = "https://github.com/catppuccin/heroic/archive/refs/heads/main.tar.gz"
+    exact = true
+    stripComponents = 2
+    refreshPeriod = "168h"
+    include = ["**/*.css"]
+{{ end }}
+
+{{ if .features.fish }}
+[".config/fish/themes"]
+    type = "archive"
+    url = "https://github.com/catppuccin/fish/archive/refs/heads/main.tar.gz"
+    exact = true
+    stripComponents = 2
+    refreshPeriod = "168h"
+    include = ["**/*.theme"]
+{{ end }}
+
+{{ if eq .chezmoi.os "windows" }}
+{{ $vividVersion := "0.9.0" -}}
+[".local/bin/vivid.exe"]
+    type = "archive-file"
+    url = "https://github.com/sharkdp/vivid/releases/download/v{{ $vividVersion }}/vivid-v{{ $vividVersion }}-x86_64-pc-windows-msvc.zip"
+    path = "vivid-v{{ $vividVersion }}-x86_64-pc-windows-msvc/vivid.exe"
+{{ end }}
+
+{{ if .features.firefox }} 
+{{ if .firefox.ultima }} 
+{{ if eq .chezmoi.os "windows" }} 
+["AppData/Roaming/Mozilla/Firefox/Profiles/4ri1crhg.default-release/chrome/theme"] 
+{{ else }} 
+[".var/app/org.mozilla.firefox/.mozilla/firefox/3ml2q8t2.default-release/chrome/theme"] 
+{{ end }} 
+    type = "archive" 
+    url = "https://github.com/soulhotel/FF-ULTIMA/releases/download/1.7.8/ffultima1.7.8.zip" 
+    exact = true 
+    stripComponents = 1 
+    refreshPeriod = "168h" 
+    include = ["theme/**"] 
+{{ end }} 
+{{ if .firefox.edgyarc }} 
+{{ if eq .chezmoi.os "windows" }} 
+["AppData/Roaming/Mozilla/Firefox/Profiles/4ri1crhg.default-release/chrome"] 
+{{ else }} 
+[".var/app/org.mozilla.firefox/.mozilla/firefox/3ml2q8t2.default-release/chrome"] 
+{{ end }} 
+    type = "archive" 
+    url = "https://github.com/artsyfriedchicken/EdgyArc-fr/archive/refs/heads/main.zip" 
+    exact = false 
+    stripComponents = 2 
+    refreshPeriod = "168h" 
+    exclude = ["EdgyArc-fr-main/.github", "EdgyArc-fr-main/Sidebery", "EdgyArc-fr-main/chrome/userChrome.css", "EdgyArc-fr-main/chrome/userContent.css"] 
+{{ end }} 
+{{ end }}
