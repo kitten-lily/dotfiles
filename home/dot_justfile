@@ -1,0 +1,9 @@
+import "/usr/share/ublue-os/justfile"
+
+# Configure fido2/u2f and enable authentication with it
+configure-u2f-auth:
+    #!/usr/bin/env bash
+    set -euo pipefail
+    mkdir -p ~/.config/Yubico
+    pamu2fcfg > ~/.config/Yubico/u2f_keys
+    sudo authselect enable-feature with-pam-u2f
