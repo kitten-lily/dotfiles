@@ -1,6 +1,11 @@
 software:
     bat: true
+    firefox: true
+    fish: true
+    gitkraken: true
     micro: true
     steam: true
-    firefox: true
-    gitkraken: true
+
+catppuccin:
+    flavor: Pink
+    theme: Macchiato

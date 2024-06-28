@@ -1,0 +1,10 @@
+{{ if .fish }}
+.config/fish/themes:
+    type: archive
+    url: https://github.com/catppuccin/fish/archive/refs/heads/main.tar.gz
+    exact: true
+    stripComponents: 2
+    refreshPeriod: 168h
+    include:
+        - "**/*.theme"
+{{ end }}
