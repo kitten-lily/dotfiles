@@ -1,0 +1,39 @@
+# Get editor completions based on the config schema
+"$schema" = "https://starship.rs/config-schema.json"
+
+# Sets user-defined palette
+palette = "catppuccin_{{ lower .catppuccin.theme }}"
+
+# Prompt
+format = """\
+$os \
+// \
+$all"""
+
+[git_branch]
+format = "//[ $symbol$branch(:$remote_branch)]($style)"
+symbol = " "
+#ignore_branches = ["master", "main"]
+#always_show_remote = true
+
+[os]
+disabled = false
+
+[os.symbols]
+Alpine = " "
+Debian = "[ ](fg:#d70a53)"
+Fedora = "[󰣛 ](fg:#3c6eb4)"
+Macos = "[ ](fg:#ffffff)"
+Ubuntu = " "
+Windows = "[ ](fg:#0078d4)"
+
+# Palette definitions
+{{ if eq (lower .catppuccin.theme) "frappe" }}
+{{ includeTemplate ".chezmoitemplates/starship-catppuccin/frappe.toml" }}
+{{ else if eq (lower .catppuccin.theme) "latte" }}
+{{ includeTemplate ".chezmoitemplates/starship-catppuccin/latte.toml" }}
+{{ else if eq (lower .catppuccin.theme) "macchiato" }}
+{{ includeTemplate ".chezmoitemplates/starship-catppuccin/macchiato.toml" }}
+{{ else if eq (lower .catppuccin.theme) "mocha" }}
+{{ includeTemplate ".chezmoitemplates/starship-catppuccin/mocha.toml" }}
+{{ end }}
