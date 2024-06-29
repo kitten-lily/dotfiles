@@ -1,0 +1,6 @@
+{{ if or (eq .chezmoi.os "linux") (eq .chezmoi.os "darwin") -}}
+#!/usr/bin/env sh
+# Brewfile hash: {{ include "Brewfile" | sha256sum }}
+brew bundle --file "$(chezmoi source-path)/Brewfile"
+
+{{ end -}}
