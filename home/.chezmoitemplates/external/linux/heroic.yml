@@ -1,0 +1,10 @@
+{{ if .heroic -}}
+.var/app/com.heroicgameslauncher.hgl/config/heroic/themes:
+    type: archive
+    url: https://github.com/catppuccin/heroic/archive/main.tar.gz
+    exact: true
+    stripComponents: 2
+    refreshPeriod: 168h
+    include:
+        - "**/themes/*.css"
+{{ end -}}

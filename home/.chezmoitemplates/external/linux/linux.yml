@@ -1,5 +1,6 @@
 {{ if eq .chezmoi.os "linux" -}}
 {{ includeTemplate ".chezmoitemplates/external/linux/steam.yml" .software }}
+{{ includeTemplate ".chezmoitemplates/external/linux/heroic.yml" .software }}
 {{ includeTemplate ".chezmoitemplates/external/linux/firefox.yml" .software }}
 {{ includeTemplate ".chezmoitemplates/external/shared/fish.yml" .software }}
 {{ end -}}
