@@ -1,17 +1,25 @@
+brew "atuin"
 brew "bat"
 brew "chezmoi"
+brew "direnv"
 brew "eza"
 brew "fd"
+brew "fzf"
+brew "gh"
+brew "git"
 brew "git-delta"
 brew "gping"
+brew "libgit2@1.7"
 brew "micro"
+brew "ollama"
 brew "ripgrep"
+brew "starship"
+brew "tealdeer"
 brew "vivid"
 brew "xh"
 brew "zoxide"
 
 brew "fish" if OS.mac?
-brew "git" if OS.mac?
 brew "starship" if OS.mac?
 cask "battle-net" if OS.mac?
 cask "gitkraken" if OS.mac?
